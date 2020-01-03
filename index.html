@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Charts</title>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Skills', 'Out of 10'],
+          ['HTML',     8],
+          ['CSS',      8],
+          ['BOOTSTRAP', 7 ],
+          ['PHP', 5],
+          ['MYSQL',    5]
+        ]);
+
+        var options = {
+          title: 'My Skills',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+	 <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
+</body>
+</html>
